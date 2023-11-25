@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #define element int
-
+//ì•„ì§ ì‚­ì œê°€ ì›í™œí•˜ì§€ ì•ŠìŒ 
 typedef struct ung{
     element data;
     struct ung *link;
@@ -57,7 +57,7 @@ void search_ung(head *head,element value){
     for(p;p != NULL; p = p->link){
         i++;
         if(p->data == value){
-            printf("\nÃ£À¸½Ã´Â %d´Â %d¹øÂ°¿¡ ÀÖ½À´Ï´Ù.\n ",value,i);
+            printf("\nì°¾ìœ¼ì‹œëŠ” %dëŠ” %dë²ˆì§¸ì— ìˆìŠµë‹ˆë‹¤.\n ",value,i);
         }
     }
 }
@@ -70,12 +70,12 @@ int main(void){
     first_insert(&ung,&head);
 
     while(1){
-        printf("\n1.»ğÀÔ 2.»èÁ¦ 3. Å½»ö: ");
+        printf("\n1.ì‚½ì… 2.ì‚­ì œ 3. íƒìƒ‰: ");
         scanf("%d",&user);
         switch(user){
             case 1:{
-                printf("1. »ğÀÔ \n");
-                printf("ÀÔ·Â : ");
+                printf("1. ì‚½ì… \n");
+                printf("ì…ë ¥ : ");
                 scanf("%d",&value);
                 insert_ung(&head,value);
                 print_ung(&head);
@@ -83,15 +83,15 @@ int main(void){
             }
 
             case 2:{
-                printf("2. »èÁ¦ \n");
+                printf("2. ì‚­ì œ \n");
                 delete_ung(&head);
                 print_ung(&head);
                 break;
             }
 
             case 3:{
-                printf("3. Å½»ö \n");
-                printf("ÀÔ·Â : ");
+                printf("3. íƒìƒ‰ \n");
+                printf("ì…ë ¥ : ");
                 scanf("%d",&value);
                 search_ung(&head,value);
                 print_ung(&head);
@@ -99,7 +99,7 @@ int main(void){
             }
 
             default :{
-                printf("Àß¸øµÈ ÀÔ·ÂÀ¸·Î Á¾·áÇÕ´Ï´Ù!\n");
+                printf("ì˜ëª»ëœ ì…ë ¥ìœ¼ë¡œ ì¢…ë£Œí•©ë‹ˆë‹¤!\n");
                 break;
             }
 
